@@ -16,6 +16,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    profilePicture: {
+      type: String,
+      default:
+        "https://h-o-m-e.org/wp-content/uploads/2022/04/Blank-Profile-Picture-3.jpg",
+    },
   },
   { timestamps: true }
 );
