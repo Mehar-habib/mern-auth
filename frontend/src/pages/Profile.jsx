@@ -57,7 +57,7 @@ function Profile() {
           onChange={(e) => setImage(e.target.files[0])}
         />
         <img
-          src={currentUser.profilePicture}
+          src={formData.profilePicture || currentUser.profilePicture}
           alt="profile"
           onClick={() => fileRef.current.click()}
           className="h-24 w-24 self-center cursor-pointer rounded-full object-cover mt-2"
