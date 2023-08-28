@@ -34,5 +34,17 @@ const userController = {
       next(error);
     }
   },
+
+  async deleteUser(req, res, next) {
+    if (req.user.id !== req.params.id) {
+      return next(errorHandler(401, "you can delete only your account!"));
+    }
+    try {
+      await User.findByIdAndDelete(req.params.id);
+      res.status(200).json("User has been deleted...");
+    } catch (error) {
+      next(error);
+    }
+  },
 };
 export default userController;
