@@ -4,18 +4,9 @@ import dotenv from "dotenv";
 import userRouter from "./routes/user.router.js";
 import authRouter from "./routes/auth.router.js";
 import cookieParser from "cookie-parser";
-import cors from "cors";
-
 const app = express();
 dotenv.config();
 
-app.use(
-  cors({
-    origin: ["https://mern-auth-lhwq.vercel.app"],
-    methods: ["POST", "GET", "DELETE"],
-    credentials: true,
-  })
-);
 mongoose
   .connect(process.env.MONGO)
   .then(() => {
